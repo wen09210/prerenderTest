@@ -1,8 +1,24 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/prerender" }
-  ],
-  "redirects": [
-    { "source": "/index.html", "destination": "/index.html" }
-  ]
-}
+	"routes": [
+	  {
+		"src": "/_next/static/(.*)",
+		"dest": "/_next/static/$1"
+	  },
+	  {
+		"src": "/static/(.*)",
+		"dest": "/static/$1"
+	  },
+	  {
+		"src": "/favicon.ico",
+		"dest": "/favicon.ico"
+	  },
+	  {
+		"src": "/manifest.json",
+		"dest": "/manifest.json"
+	  },
+	  {
+		"src": "/.*",
+		"dest": "/api/prerender"
+	  }
+	]
+  }
