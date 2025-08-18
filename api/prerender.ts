@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const PRERENDER_TOKEN = process.env.PRERENDER_TOKEN || '';
+const PRERENDER_TOKEN = process.env.PRERENDER_TOKEN || 'TCgx9MijlwMxRLwUgAIC';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
@@ -11,10 +11,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
     const userAgent = req.headers['user-agent'] || '';
     const isBot = /bot|crawler|spider|crawling/i.test(userAgent);
+    console.log('User-Agent:', userAgent);
+    console.log('isBot:', isBot);
 
     if (isBot) {
-      const url = req.url || '/';
+      // 取得 query string 的 url 參數，預設為首頁
+      const url = (req.query && req.query.url) ? String(req.query.url) : '/';
       const prerenderUrl = `https://service.prerender.io${url}`;
+      console.log('Proxying to:', prerenderUrl);
       const prerenderRes = await fetch(prerenderUrl, {
         headers: {
           'X-Prerender-Token': PRERENDER_TOKEN,
