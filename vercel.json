@@ -15,10 +15,12 @@
 	  {
 		"src": "/manifest.json",
 		"dest": "/manifest.json"
-	  },
-	  {
-		"src": "/.*",
-		"dest": "/api/prerender"
 	  }
+	],
+	"rewrites": [
+		{
+			"source": "/:path*",
+			"destination": "/api/prerender"
+		}
 	]
   }
