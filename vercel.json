@@ -1,19 +1,16 @@
 {
 	"rewrites": [
-		{
-			"source": "/api/prerender/(.*)",
-			"destination": "https://prerender.io/https://prerender-test-ten.vercel.app/$1"
-		}
-	],
-	"headers": [
-		{
-			"source": "/api/prerender/(.*)",
-			"headers": [
-				{
-					"key": "X-Prerender-Token",
-					"value": "TCgx9MijlwMxRLwUgAIv"
-				}
-			]
-		}
+	  {
+		"source": "/(.*)",                 
+		"has": [
+		  {
+			"type": "header",
+			"key": "user-agent",
+			"value": "(?i)(bot|crawl|slurp|spider|bing|google|duckduck|baidu|yandex|sogou|exabot|facebot|ia_archiver)"
+		  }
+		],
+		"destination": "/api/prerender?url=https://prerender-test-ten.vercel.app/$1"
+	  }
 	]
-}
+  }
+  
