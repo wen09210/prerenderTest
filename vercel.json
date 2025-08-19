@@ -6,7 +6,7 @@
 		  {
 			"type": "header",
 			"key": "User-Agent",
-			"value": ".*([Gg]ooglebot|[Bb]ingbot|[Yy]andex|[Bb]aiduspider|[Tt]witterbot|facebookexternalhit|[Ll]inkedinbot|[Ee]mbedly|[Ss]lackbot).*"
+			"value": ".*[Gg]ooglebot.*"
 		  }
 		],
 		"destination": "/api/debug"
