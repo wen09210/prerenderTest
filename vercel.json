@@ -1,20 +1,19 @@
 {
 	"rewrites": [
-	  {
-		"source": "/(.*)",
-		"has": [
-		  {
-			"type": "header",
-			"key": "User-Agent",
-			"value": ".*Bingbot.*"
-		  }
-		],
-		"destination": "/api/debug"
-	  },
-	  {
-		"source": "/(.*)",
-		"destination": "/$1"
-	  }
+		{
+			"source": "/api/prerender/(.*)",
+			"destination": "https://prerender.io/https://prerender-test-ten.vercel.app/$1"
+		}
+	],
+	"headers": [
+		{
+			"source": "/api/prerender/(.*)",
+			"headers": [
+				{
+					"key": "X-Prerender-Token",
+					"value": "TCgx9MijlwMxRLwUgAIv"
+				}
+			]
+		}
 	]
-  }
-  
+}
