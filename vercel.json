@@ -6,7 +6,7 @@
 		  {
 			"type": "header",
 			"key": "User-Agent",
-			"value": ".*(googlebot|bingbot|yandex|baiduspider|twitterbot|facebookexternalhit|linkedinbot|embedly|slackbot).*"
+			"value": ".*(Googlebot|Bingbot|Yandex|Baiduspider|Twitterbot|facebookexternalhit|LinkedInBot|Embedly|Slackbot).*"
 		  }
 		],
 		"destination": "https://service.prerender.io/https://prerender-test-ten.vercel.app/$1"
