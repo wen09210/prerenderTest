@@ -6,10 +6,14 @@
 		  {
 			"type": "header",
 			"key": "User-Agent",
-			"value": ".*(Googlebot|Bingbot|Yandex|Baiduspider|Twitterbot|facebookexternalhit|LinkedInBot|Embedly|Slackbot).*"
+			"value": ".*([Gg]ooglebot|[Bb]ingbot|[Yy]andex|[Bb]aiduspider|[Tt]witterbot|facebookexternalhit|[Ll]inkedinbot|[Ee]mbedly|[Ss]lackbot).*"
 		  }
 		],
-		"destination": "https://service.prerender.io/https://prerender-test-ten.vercel.app/$1"
+		"destination": "/api/debug"
+	  },
+	  {
+		"source": "/(.*)",
+		"destination": "/$1"
 	  }
 	]
   }
