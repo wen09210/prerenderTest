@@ -6,7 +6,7 @@
 		  {
 			"type": "header",
 			"key": "User-Agent",
-			"value": ".*[Gg]ooglebot.*"
+			"value": ".*Bingbot.*"
 		  }
 		],
 		"destination": "/api/debug"
