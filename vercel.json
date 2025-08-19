@@ -1,8 +1,15 @@
 {
 	"rewrites": [
-		{
-			"source": "/:path*",
-			"destination": "/api/prerender"
-		}
+	  {
+		"source": "/(.*)",
+		"has": [
+		  {
+			"type": "header",
+			"key": "user-agent",
+			"value": ".*(googlebot|bingbot|yandex|baiduspider|twitterbot|facebookexternalhit|linkedinbot|embedly|slackbot).*"
+		  }
+		],
+		"destination": "https://service.prerender.io/https://prerender-test-ten.vercel.app/$1"
+	  }
 	]
-}
+  }
