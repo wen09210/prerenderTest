@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<Navigate to="/index" replace />} />
         <Route path="/index" element={<App />} />
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="/go" element={<ErrorPage />} />
         <Route path="*" element={<Navigate to="/error" replace />} />
       </Routes>
     </BrowserRouter>
