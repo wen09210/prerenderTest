@@ -26,7 +26,7 @@ export default async function handler(req, res) {
   console.log(`[Prerender] Path: ${path}`);
   console.log(`[Prerender] Full URL: ${fullUrl}`);
 
-  // if (botPattern.test(userAgent)) {
+  if (botPattern.test(userAgent)) {
     // 爬蟲 → fetch prerender.io
     try {
       const response = await fetch(`https://service.prerender.io/${fullUrl}`, {
@@ -49,9 +49,9 @@ export default async function handler(req, res) {
       // 發生錯誤時，重導向到原始頁面
       res.redirect(307, path);
     }
-  // } else {
-  //   // 一般使用者 → 重導向到實際頁面
-  //   console.log(`[Prerender] Non-bot request, redirect to: ${path}`);
-  //   res.redirect(307, path);
-  // }
+  } else {
+    // 一般使用者 → 重導向到實際頁面
+    console.log(`[Prerender] Non-bot request, redirect to: ${path}`);
+    res.redirect(307, path);
+  }
 }
