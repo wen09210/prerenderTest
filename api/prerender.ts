@@ -1,7 +1,7 @@
 // api/prerender.js
 export default async function handler(req, res) {
   const url = req.query.url
-  const PRERENDER_TOKEN = process.env.PRERENDER_TOKEN || 'TCgx9MijlwMxRLwUgAIC';
+  const PRERENDER_TOKEN = 'TCgx9MijlwMxRLwUgAIC';
 
   if (!url) {
     res.status(400).send('Missing url query parameter')
