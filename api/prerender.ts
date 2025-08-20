@@ -1,8 +1,7 @@
 
 
 export default async function handler(req, res) {
-  const PRERENDER_TOKEN = 'TCgx9MijlwMxRLwUgAIC';
-
+  const PRERENDER_TOKEN = process.env.PRERENDER_TOKEN || 'TCgx9MijlwMxRLwUgAIC';;
   // 把 /api/prerender 拿掉，剩下實際 path
   let path = req.url.replace(/^\/api\/prerender/, "");
 
