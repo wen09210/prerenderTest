@@ -6,21 +6,10 @@
 		  {
 			"type": "header",
 			"key": "user-agent",
-			"value": ".*(googlebot|bingbot|baiduspider|facebot|twitterbot|linkedinbot).*"
+			"value": "(?i)(googlebot|bingbot|yandex|baiduspider|duckduckbot|slurp)"
 		  }
 		],
-		"destination": "https://service.prerender.io/https://prerender-test-ten.vercel.app/$1"
-	  }
-	],
-	"headers": [
-	  {
-		"source": "/(.*)",
-		"headers": [
-		  {
-			"key": "X-Prerender-Token",
-			"value": "TCgx9MijlwMxRLwUgAIC"
-		  }
-		]
+		"destination": "/api/prerender?path=/$1"
 	  }
 	]
   }
